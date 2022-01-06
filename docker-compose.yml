@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  pandemic-card-counter:
+    image: mts7/pandemic-card-counter
+    container_name: pandemic-card-counter
+    build:
+      context: .
+      dockerfile: ${APP_ENV}.docker
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 8081:${EXPOSE_PORT}
+

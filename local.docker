@@ -1,0 +1,13 @@
+FROM node:lts-alpine
+
+ENV HOST=0.0.0.0
+
+WORKDIR /app
+COPY package*.json ./
+RUN yarn && yarn install --check-files
+COPY . .
+
+EXPOSE 8080
+
+CMD [ "yarn", "serve" ]
+
