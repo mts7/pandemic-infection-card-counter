@@ -1,9 +1,15 @@
-<template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+<template lang="pug">
+#page-app.page
+  #nav
+    RouterLink(
+      to="/"
+    ) Home
+    |  |
+    |
+    RouterLink(
+      to="/about"
+    ) About
+  RouterView
 </template>
 
 <style lang="scss">
